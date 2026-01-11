@@ -1,13 +1,28 @@
 [package]
 name = "slum"
-version = "0.1.0"
+version = "0.1.1"
 edition = "2021"
 description = "Fleet orchestrator for tenement servers"
 license = "Apache-2.0"
 repository = "https://github.com/russellromney/slum"
 homepage = "https://slum.dev"
 
+[lib]
+name = "slum"
+crate-type = ["cdylib", "rlib"]
+
+[[bin]]
+name = "slum"
+path = "src/main.rs"
+
+[features]
+default = []
+python = ["pyo3"]
+
 [dependencies]
+# Python bindings
+pyo3 = { version = "0.22", features = ["extension-module"], optional = true }
+
 # Web framework
 axum = { version = "0.7", features = ["macros"] }
 tokio = { version = "1", features = ["full"] }

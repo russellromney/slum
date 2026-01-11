@@ -1,0 +1,34 @@
+[build-system]
+requires = ["maturin>=1.4,<2.0"]
+build-backend = "maturin"
+
+[project]
+name = "slum"
+version = "0.1.1"
+description = "Fleet orchestrator for tenement servers"
+readme = "README.md"
+license = { text = "Apache-2.0" }
+requires-python = ">=3.8"
+authors = [
+    { name = "Russell Romney", email = "russellromney@gmail.com" }
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: Apache Software License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Rust",
+]
+keywords = ["tenement", "fleet", "orchestrator", "multi-tenant"]
+
+[project.urls]
+Homepage = "https://slum.dev"
+Repository = "https://github.com/russellromney/slum"
+
+[tool.maturin]
+features = ["python"]
